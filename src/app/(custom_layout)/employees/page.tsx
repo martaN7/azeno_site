@@ -1,5 +1,4 @@
 'use client'
-
 import {useEffect, useState} from "react";
 import {apiCall} from "@/api/api";
 import Card from "@/components/Card";
@@ -9,6 +8,8 @@ interface Employee {
     seniority: number;
     photo: string;
     position: string;
+    github: string;
+    linkedin: string;
 }
 
 interface EmployeeId extends Employee {
@@ -33,18 +34,23 @@ function Page() {
     }, [])
 
     return (
-        <div className="flex gap-4 flex-wrap max-w-5xl mx-auto">
-            {employees.map(({fullName, photo, seniority, id, position}) => (
+        <>
+            <h1 className="text-center text-5xl mb-5">Azeno heroes:</h1>
+            <div className="flex gap-4 flex-wrap justify-center max-w-5xl mx-auto">
+                {employees.map(({fullName, seniority, id, position, photo, github, linkedin}) => (
                     <Card
                         key={id}
                         fullName={fullName}
+                        position={position}
                         photo={photo}
                         seniority={seniority}
-                        position={position}
+                        github={github}
+                        linkedin={linkedin}
                     />
-            ))}
+                ))}
+            </div>
+        </>
 
-        </div>
     );
 }
 
