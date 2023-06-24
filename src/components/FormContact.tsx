@@ -2,7 +2,7 @@
 
 import {SubmitHandler, useForm} from "react-hook-form";
 import React, { useState} from "react";
-import {apiCall} from "@/api/api";
+import {apiCall} from "@/helpers/helpers";
 
 type Inputs = {
     fullName: string,
