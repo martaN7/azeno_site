@@ -1,6 +1,8 @@
+import FormContact from "@/components/FormContact";
+
 function Page() {
     return (
-        <div>Contact page</div>
+    <FormContact/>
     );
 }
 
